@@ -32,6 +32,6 @@ You can test different sized networks by making your own `nodes.json` and `edges
 and then refresh the browser. (Be that the browser cache refreshes to relfect changes, e.g. press `ctrl+refresh` on mac with chrome).
 
 # Todo
-- __Figure out how to render lots of nodes efficiently__.  The entire network is really huge: 5,401,148 nodes.  Usually when the browser opens a physics simulation runs to find the optimal node positioning; this is intensive.  Ideally, the sim should only be done and then positions should be cached. Note: many nodes lead to deadends and most nodes are on the outskirts of the network; do we care about seeing these nodes?
+- __Figure out how to render lots of nodes efficiently__.  The entire network is really huge: 5,401,148 nodes.  Usually when the browser opens it runs a physics simulation to find the optimal node positioning; this is intensive.  Ideally, the sim should only be done once and then positions should be cached. Note: many nodes lead to deadends and most nodes are on the outskirts of the network; do we care about seeing these nodes?
 - __Analyze the network__.  Find loops, characterize degree distribution, etc.
 - __Add to todo__
