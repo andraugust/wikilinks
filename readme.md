@@ -6,7 +6,7 @@ Q: Who wants to visualize the first-link structure of Wikipedia?
 
 A: Anyone interested in seeing the abstraction structure of human knowledge...  First-links generally lead to an abstraction/generalization of the current page, so by visualizing first links we can approximate the abstraction structure of... _everything_.
 
-# Quick start: running the app
+# Quick start
 This project aims to be a web app, so running it requires a server. I use
 ```
 $ cd wikilinks
@@ -25,7 +25,11 @@ vis.js creates a network based on the data in `nodes.json` and `edges.json`.  Ot
 
 The data in `nodes.json` and `edges.json` contains __only part of the network.__  The entire network is way too big to render right now. Big rendering is under construction...
 
-You can test different sized networks by making your own json files.  To do this run `$ python3 tab_delim2json.py <num_nodes>` and then open `net.html`. (Be sure to refresh browser cache to show changes, e.g. with `ctrl+refresh` on mac chrome).
+You can test different sized networks by making your own `nodes.json` and `edges.json`.  To do this simply run
+
+`$ python3 tab_delim2json.py <num_nodes>`
+
+and then refresh the browser. (Be that the browser cache refreshes to relfect changes, e.g. press `ctrl+refresh` on mac with chrome).
 
 # Todo
 - __Figure out how to render lots of nodes efficiently__.  The entire network is really huge: 5,401,148 nodes.  Usually when the browser opens a physics simulation runs to find the optimal node positioning; this is intensive.  Ideally, the sim should only be done and then positions should be cached. Note: many nodes lead to deadends and most nodes are on the outskirts of the network; do we care about seeing these nodes?
