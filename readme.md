@@ -33,4 +33,4 @@ and then refresh the browser. (Be that the browser cache refreshes to relfect ch
 
 # Todo
 - __Figure out how to render lots of nodes efficiently__.  The entire network is really huge: 5,401,148 nodes.  Usually when the browser opens a physics simulation runs to find the optimal node positioning; this is intensive.  Ideally, the sim should only be done and then positions should be cached. Note: many nodes lead to deadends and most nodes are on the outskirts of the network; do we care about seeing these nodes?
-- __Fix simpler stuff__
+- __Add to todo__
