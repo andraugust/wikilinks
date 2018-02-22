@@ -2,18 +2,21 @@ import os
 import sys
 
 ## Params
-nnodes = int(sys.argv[1])  # more nodes may be generated in order to show connectivity (otherwise there are a bunch of nodes by themselves)
-
+try:
+	nnodes = int(sys.argv[1])  # more nodes may be generated in order to show connectivity (otherwise there are a bunch of nodes by themselves)
+except:
+	sys.exit('ERROR! Argument for number of nodes must be provided as input')
+	
 cwd = os.getcwd()
-edges_output_path = cwd+'/edges.json'
-nodes_output_path = cwd+'/nodes.json'
+edges_output_path = os.path.join(cwd,'edges.json')
+nodes_output_path = os.path.join(cwd,'nodes.json')
 
 # make edge list and node list
 edge_list = []
 node_list = []
 nodes = {}
 
-with open(cwd+'/data/net.txt','r') as f:
+with open(cwd+'/data/net.txt','r', encoding = 'latin10') as f:
     lines = f.read().rstrip().split('\n')
     for i,line in enumerate(lines):
         from_, to_ = line.split('\t')
