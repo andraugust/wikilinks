@@ -3,6 +3,7 @@
 Welcome to wikilinks, a project for visualizing the first-link structure of Wikipedia.
 
 Q: Who wants to visualize the first-link structure of Wikipedia?
+
 A: Anyone interested in seeing the abstraction structure of human knowledge!  First links generally lead to an abstraction/generalization of the current page, so by visualizing first links we can approximate the abstraction structure of... _everything_.
 
 # Quick start: running the app
