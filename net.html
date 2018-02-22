@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script type="text/javascript" src="vis-4.21.0/dist/vis.min.js"></script>
+  <link href="vis-4.21.0/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+  <style type="text/css">
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+<body>
+
+
+<p>
+    Welcome to wikilinks! <br />
+</p>
+
+<!--
+<script>
+    var nnodes;
+    $('#inputText').on('keyup', function (ev) {
+        if (ev.key == 'Enter') {
+            nnodes = $('#inputText').val();
+            if (!isNaN(nnodes)) {
+                console.log(2*nnodes);
+            }
+        }
+    });
+</script>
+-->
+
+<!--
+<div>
+    <input type="button" value="Generate JSON" onclick="exportNetwork()">
+</div>
+-->
+
+<div id="mynetwork"></div>
+
+<script type="text/javascript"`>
+
+  // read node file
+  var nodes;
+  var nodesFile = 'nodes.json';
+  $.ajax({
+      url:nodesFile,
+      async: false,
+      success:function(data){
+          nodes = data;
+      }
+  });
+
+  // read edges file
+  var edges;
+  var edgesFile = 'edges.json';
+  $.ajax({
+      url:edgesFile,
+      async: false,
+      success:function(data){
+          edges = data;
+      }
+  });
+
+  // create net
+  var container = document.getElementById('mynetwork');
+
+  var data = {nodes: nodes, edges: edges};
+
+  var options = {
+      interaction:{
+          hover:true,
+          hideEdgesOnDrag: true
+      },
+      nodes: {
+          shape: 'dot',
+          size: 15,
+          font: {
+              size: 12,
+              color: '#000000'
+          },
+          borderWidth: 2
+      },
+      edges: {
+          width: 2,
+          arrows: 'from',
+          smooth: false
+      },
+      physics: {
+          enabled: true,
+          minVelocity: 0.2
+      }
+  };
+
+  var network = new vis.Network(container, data, options);
+
+</script>
+
+
+</body>
+</html>
